@@ -14,6 +14,13 @@ export const middleware = paymentMiddleware(
         description: "Access to protected content",
       },
     },
+    "/api/payment/chat": {
+      price: "$0.01",
+      network,
+      config: {
+        description: "AI chat message",
+      },
+    },
     "/payment/builder": {
       price: "$0.01",
       network,
