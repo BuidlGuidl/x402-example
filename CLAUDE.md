@@ -21,7 +21,11 @@ x402 Chat is a Scaffold-ETH 2 extension demonstrating micropayment-gated content
 
 **x402 Integration:**
 - `packages/nextjs/middleware.ts`: Payment middleware configures protected routes
-- Protected routes require $0.01 payment: `/api/payment/builder`, `/payment/builder`
+- Protected routes:
+  - `/api/payment/builder` - $0.01 (protected content)
+  - `/api/payment/chat` - $0.01 (AI chat message)
+  - `/api/payment/store` - $0.05 (file download)
+  - `/payment/builder` - $0.01 (protected page)
 - Environment variables: `NEXT_PUBLIC_FACILITATOR_URL`, `RESOURCE_WALLET_ADDRESS`, `NETWORK`
 
 ## Common Commands
@@ -93,8 +97,11 @@ const { data: events } = useScaffoldEventHistory({
 
 - `packages/nextjs/middleware.ts`: x402 payment middleware configuration
 - `packages/nextjs/scaffold.config.ts`: Network configuration (default: baseSepolia)
+- `packages/nextjs/app/chat/page.tsx`: AI chat interface with x402 payments
+- `packages/nextjs/app/store/page.tsx`: File download store with x402 payments
 - `packages/hardhat/deploy/`: Contract deployment scripts
 - `packages/hardhat/scripts/send402request.ts`: Test script for protected API calls
+- `packages/hardhat/scripts/send402chat.ts`: Test script for chat API with custom messages
 - `packages/nextjs/contracts/deployedContracts.ts`: Auto-generated contract ABIs
 - `packages/nextjs/hooks/scaffold-eth/`: Contract interaction hooks
 
@@ -103,7 +110,10 @@ const { data: events } = useScaffoldEventHistory({
 1. Start local blockchain: `yarn chain`
 2. Deploy contracts: `yarn deploy`
 3. Start frontend: `yarn start`
-4. Access debug UI: http://localhost:3000/debug
+4. Access features:
+   - Debug UI: http://localhost:3000/debug
+   - Chat interface: http://localhost:3000/chat
+   - File store: http://localhost:3000/store
 5. Write tests in `packages/hardhat/test/`
 6. Build custom UI using scaffold-eth hooks and components
 

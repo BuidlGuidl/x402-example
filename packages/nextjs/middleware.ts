@@ -21,6 +21,13 @@ export const middleware = paymentMiddleware(
         description: "AI chat message",
       },
     },
+    "/api/payment/store": {
+      price: "$0.05",
+      network,
+      config: {
+        description: "Download resume template file",
+      },
+    },
     "/payment/builder": {
       price: "$0.01",
       network,

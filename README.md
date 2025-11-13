@@ -1,13 +1,15 @@
-# x402 (Scaffold-ETH 2 extension)
+# x402 Chat (Scaffold-ETH 2 extension)
 
-This x402 extension demonstrate how to use the x402 protocol to monetize your APIs and pages with micropayments.
+This x402 extension demonstrates how to use the x402 protocol to monetize your APIs and pages with micropayments.
 
 It includes:
 
 - NextJS middleware configuration to gate access to protected routes
   - A protected page that requires a payment to access
-  - A protected API route that requires a payment to access
-- A script to send a request to the protected API route
+  - A protected chat interface with AI (each message requires a payment)
+  - A file download store where users pay to download files
+  - Protected API routes that require payments to access
+- Scripts to send requests to protected endpoints via command line
 
 ## Requirements
 
@@ -33,13 +35,46 @@ yarn start
 
 Visit your app on: `http://localhost:3000`.
 
-You can run the script to send a request to the protected API route with:
+### Testing Protected Endpoints
 
-```
+You can test the protected endpoints using command line scripts:
+
+**Test the builder API endpoint:**
+```bash
 yarn send402request
 ```
 
-This will send a request to the protected API route and you will see the response in the console. You'll need to have a wallet with funds ([faucet](https://faucet.circle.com/)) on the network you're using (default is baseSepolia).
+**Test the chat API with default message:**
+```bash
+yarn send402chat
+```
+
+**Test the chat API with a custom message:**
+```bash
+CHAT_MESSAGE="What is blockchain technology?" yarn send402chat
+```
+
+**More examples:**
+```bash
+CHAT_MESSAGE="Explain smart contracts" yarn send402chat
+CHAT_MESSAGE="What is your name?" yarn send402chat
+```
+
+These scripts will automatically handle the x402 payment flow and display the responses in the console. You'll need to have a wallet with funds ([faucet](https://faucet.circle.com/)) on the network you're using (default is baseSepolia).
+
+### Using the Chat Interface
+
+Navigate to `http://localhost:3000/chat` to access the AI chat interface. Each message you send will require a micropayment ($0.01) via x402. Make sure to connect your wallet first!
+
+### Using the File Store
+
+Navigate to `http://localhost:3000/store` to browse and download files. Each download requires a micropayment ($0.05) via x402. Features:
+- Instant download after payment confirmation
+- Secure payment via x402 protocol
+- Files are delivered as browser downloads
+
+Currently available:
+- **Resume Template - Wind Alpha** - Professional resume template (ZIP, 7.7 KB) - $0.05
 
 ## Configuration
 
