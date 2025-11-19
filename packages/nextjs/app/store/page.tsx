@@ -67,24 +67,31 @@ export default function StorePage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <h1 className="font-semibold text-3xl lg:text-4xl mb-12">x402 Store</h1>
 
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <div className="card bg-base-100 shadow-xl">
             <div className="card-body">
               <h2 className="card-title text-2xl">Resume Template</h2>
-              <p className="text-base-content/70 my-2">
-                Professional resume template designed for modern job seekers. Clean, minimalist design that highlights
-                your experience and skills.
-              </p>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div>
+                  <p className="text-base-content/70 my-2">
+                    Professional resume template designed for modern job seekers. Clean, minimalist design that
+                    highlights your experience and skills.
+                  </p>
 
-              <div className="text-sm text-base-content/60">
-                <p>✓ Secure payment via x402 protocol</p>
-                <p>✓ Instant download after payment confirmation</p>
-                <p>✓ Payment processed on Base Sepolia network</p>
-              </div>
+                  <div className="text-sm text-base-content/60">
+                    <p>✓ Secure payment via x402 protocol</p>
+                    <p>✓ Instant download after payment confirmation</p>
+                    <p>✓ Payment processed on Base Sepolia network</p>
+                  </div>
 
-              <div className="flex items-center gap-2 my-2">
-                <span className="badge badge-primary badge-lg">ZIP File</span>
-                <span className="badge badge-outline badge-lg">7.7 KB</span>
+                  <div className="flex items-center gap-2 my-2">
+                    <span className="badge badge-primary badge-lg">ZIP File</span>
+                    <span className="badge badge-outline badge-lg">7.7 KB</span>
+                  </div>
+                </div>
+                <div className="p-6 border border-gray-200 rounded-2xl">
+                  <img alt="" src="/resume-alpha.png" />
+                </div>
               </div>
 
               <div className="divider"></div>
@@ -121,7 +128,7 @@ export default function StorePage() {
                           d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
                         />
                       </svg>
-                      Download Now
+                      Buy Now
                     </>
                   )}
                 </button>
