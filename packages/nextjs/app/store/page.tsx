@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useAccount, useWalletClient } from "wagmi";
 import { wrapFetchWithPayment } from "x402-fetch";
 
@@ -90,7 +91,7 @@ export default function StorePage() {
                   </div>
                 </div>
                 <div className="p-6 border border-gray-200 rounded-2xl">
-                  <img alt="" src="/resume-alpha.png" />
+                  <Image alt="resume template" src="/resume-alpha.png" width={672} height={800} />
                 </div>
               </div>
 
